@@ -1,0 +1,52 @@
+<div>
+    <%= render 'shared/error', obj: @user %>
+</div>
+
+<div class="signup-container">
+    <div class="row center">
+        <div class="col s12 m12 l8 offset-l2">
+            <div class="card-panel">
+                <h3 class="header">Sign Up</h3>
+
+                <div class="row">
+                    <%= form_for(@user, html: { class: "col s12" }) do |f| %>
+
+                        <div class="row">
+                            <div class="input-field col s12 m6">
+                                <%= f.text_field :firstname %>
+                                <%= f.label :firstname, class: "active" %>
+                            </div>
+                        
+                            <div class="input-field col s12 m6">
+                                <%= f.text_field :lastname %>
+                                <%= f.label :lastname, class: "active" %>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <%= f.email_field :email %>
+                                <%= f.label :email, class: "active" %>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12 m6">
+                                <%= f.password_field :password %>
+                                <%= f.label :password %>
+                            </div>
+                        
+                            <div class="input-field col s12 m6">
+                                <%= f.password_field :password_confirmation %>
+                                <%= f.label :password_confirmation %>
+                            </div>
+                        </div>
+
+                        <%= f.button 'Sign Up', class: "waves-effect waves-light btn" %>
+
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

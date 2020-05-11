@@ -1,0 +1,17 @@
+<% if obj.errors.any? %>
+    <div class="container">
+        <div class="row pt-30">
+            <div class="col s12 m12 l12">
+                <div class="card-panel red lighten-2 white-text">
+                    <strong><%= pluralize(obj.errors.count, "error") %></strong>
+                    prohibited your profile from being saved
+                    <ul>
+                        <% obj.errors.full_messages.each do |message| %>
+                            <li><%= message %></li>
+                        <% end %>
+                    </ul
+                </div>
+            </div>
+        </div>
+    </div>
+<% end %>
