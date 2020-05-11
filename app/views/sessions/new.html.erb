@@ -1,0 +1,31 @@
+<div class="signup-container">
+    <div class="row center">
+        <div class="col s12 m12 l8 offset-l2">
+            <div class="card-panel">
+                <h3 class="header">Login</h3>
+
+                <div class="row">
+                    <%= form_for(:sessions, html: { class: "col s12" }) do |f| %>
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <%= f.email_field :email %>
+                                <%= f.label :email, class: "active" %>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <%= f.password_field :password %>
+                                <%= f.label :password %>
+                            </div>
+                        </div>
+
+                        <%= f.button "Login", class: "waves-effect waves-light btn" %>
+
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

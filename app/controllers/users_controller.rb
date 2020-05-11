@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
     before_action :set_user, only: [:show, :edit, :update]
+    before_action :require_same_student, only: [:edit, :update]
 
     def show
     end
@@ -37,6 +38,12 @@ class UsersController < ApplicationController
 
     def user_params
         params.require(:user).permit(:firstname, :lastname, :email, :password, :password_confirmation)
+    end
+
+    def require_same_student
+        if current_user != @student
+            redirect_to root_path
+        end
     end
 
 end

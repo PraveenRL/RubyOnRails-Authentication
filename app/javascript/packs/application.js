@@ -9,5 +9,5 @@ import "materialize-css/dist/js/materialize";
 
 $(document).on('turbolinks:load', function () {
     $('.sidenav').sidenav();
-    $('#error-container').fadeOut(3000);
+    $('#fade-out-container').fadeOut(3000);
 });

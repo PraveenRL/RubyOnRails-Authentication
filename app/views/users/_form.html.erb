@@ -6,7 +6,7 @@
     <div class="row center">
         <div class="col s12 m12 l8 offset-l2">
             <div class="card-panel">
-                <h3 class="header">Sign Up</h3>
+                <h3 class="header"><%= @user.new_record? ? "Sign Up" : "Edit Profile" %></h3>
 
                 <div class="row">
                     <%= form_for(@user, html: { class: "col s12" }) do |f| %>
@@ -42,7 +42,7 @@
                             </div>
                         </div>
 
-                        <%= f.button 'Sign Up', class: "waves-effect waves-light btn" %>
+                        <%= f.button(@user.new_record? ? "Sign Up" : "Submit", class: "waves-effect waves-light btn") %>
 
                     <% end %>
                 </div>
